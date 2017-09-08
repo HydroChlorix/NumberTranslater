@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,27 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
+            //Enumerable.Range(0, 30).OrderByDescending(n => n);
+            //Run(Enumerable.Range(0, 1));
+            Run(Enumerable.Range(0, 10));
+            Run(Enumerable.Range(10, 10));
+            Run(Enumerable.Range(20, 80));
+            Run(Enumerable.Range(100, 10));
+            //Run(Enumerable.Range(40, 70));
+            //Run(Enumerable.Range(0, 10));
+
+
+            Console.ReadLine();
+        }
+
+        private static void Run(IEnumerable<int> enumerable)
+        {
+            //TranslateService ts = new TranslateService();
+            foreach (var item in enumerable.OrderBy(n => n))
+            {
+                Console.WriteLine("{0} {1}", item, TranslateFactory.Create(item).Translate());
+            }
+            Console.WriteLine();
         }
     }
 }
