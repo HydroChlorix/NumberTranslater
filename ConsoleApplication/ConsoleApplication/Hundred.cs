@@ -14,30 +14,23 @@ namespace ConsoleApplication
 
         public string Translate()
         {
-            return string.Format("{0} {1}", this.ConvertFirstGroupToString(), this.ConvertSecondGroupToString());
+            return string.Format("{0} {1}", this.ConvertFirstGroupToString(), this.ConvertSecondGroupToString().ToLower());
         }
 
         private string ConvertFirstGroupToString()
         {
-            string result = string.Empty;
-
-            //if (this._firstGroup == 1)
-            //{
-            //    result = base.numberList[this._firstGroup];//Only 2 digit
-            //}
-            //else
-            //{
-            //    result = ;
-            //}
-
-            return string.Format("{0} {1}", this.FirstNumber, base.numberList[this._divider]);
+            return string.Format("{0} {1}", base.numberList[this.FirstNumber], base.numberList[this._divider].ToLower());
         }
         private string ConvertSecondGroupToString()
         {
             string result = string.Empty;
-            if (this.FirstNumber > 1 && this.LastNumber != 0)
+            if (this.LastNumber != 0)
             {
-                result = numberList[this.LastNumber];
+                string value = numberList.TryGetValue(this.LastNumber, out value) ? value : TranslateFactory.Create(this.LastNumber).Translate();
+
+                result = string.Format("and {0}", value);
+
+
             }
             return result;
         }

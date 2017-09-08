@@ -13,10 +13,17 @@ namespace ConsoleApplication
         {
             //Enumerable.Range(0, 30).OrderByDescending(n => n);
             //Run(Enumerable.Range(0, 1));
-            Run(Enumerable.Range(0, 10));
-            Run(Enumerable.Range(10, 10));
-            Run(Enumerable.Range(20, 80));
-            Run(Enumerable.Range(100, 10));
+            //Run(Enumerable.Range(0, 10));
+            //Run(Enumerable.Range(10, 10));
+            //Run(Enumerable.Range(20, 80));
+            Run(Enumerable.Range(1000, 10));
+
+            //Run(Enumerable.Range(200, 3));
+
+            //Run(Enumerable.Range(300, 3));
+
+            //Run(Enumerable.Range(400, 3));
+
             //Run(Enumerable.Range(40, 70));
             //Run(Enumerable.Range(0, 10));
 
