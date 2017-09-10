@@ -44,17 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseNumber.cs" />
+    <Compile Include="NumberProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TranslaterFactory.cs" />
+    <Compile Include="TranslaterManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication\ConsoleApplication.csproj">
-      <Project>{8C1BC636-95A3-468C-9828-35FBB9D4E907}</Project>
-      <Name>ConsoleApplication</Name>
-    </ProjectReference>
+    <None Include="_Diagram\Diagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,7 +10,7 @@ namespace ConsoleV2.Test
         public void GetSuffix_ONE_HUNDRED_Success()
         {
 
-            Translater ts = new Translater(123);
+            TranslaterManager ts = new TranslaterManager(123);
 
             string expect = "ONE_HUNDRED";
 
@@ -19,11 +19,10 @@ namespace ConsoleV2.Test
             Assert.AreEqual(expect, actual);
         }
 
-
         [TestMethod]
         public void GetSuffix_ONE_THOUSAND_Success()
         {
-            Translater ts = new Translater(123456);
+            TranslaterManager ts = new TranslaterManager(123456);
 
             string expect = "ONE_THOUSAND";
 
@@ -32,11 +31,10 @@ namespace ConsoleV2.Test
             Assert.AreEqual(expect, actual);
         }
 
-
         [TestMethod]
         public void GetSuffix_ONE_MILLION_Success()
         {
-            Translater ts = new Translater(123456789);
+            TranslaterManager ts = new TranslaterManager(123456789);
 
             string expect = "ONE_MILLION";
 
@@ -48,7 +46,7 @@ namespace ConsoleV2.Test
         [TestMethod]
         public void GetSuffix_ONE_BILLION_Success()
         {
-            Translater ts = new Translater(123456789000);
+            TranslaterManager ts = new TranslaterManager(123456789000);
 
             string expect = "ONE_BILLION";
 
@@ -60,7 +58,7 @@ namespace ConsoleV2.Test
         [TestMethod]
         public void GetSuffix_ONE_TRILLION_Success()
         {
-            Translater ts = new Translater(123456789000123);
+            TranslaterManager ts = new TranslaterManager(123456789000123);
 
             string expect = "ONE_TRILLION";
 
@@ -72,7 +70,7 @@ namespace ConsoleV2.Test
         [TestMethod]
         public void GetSuffix_ONE_QUADRILLION_Success()
         {
-            Translater ts = new Translater(123456789000123456);
+            TranslaterManager ts = new TranslaterManager(123456789000123456);
 
             string expect = "ONE_QUADRILLION";
 
@@ -80,5 +78,19 @@ namespace ConsoleV2.Test
 
             Assert.AreEqual(expect, actual);
         }
+
+        //[TestMethod]
+        //public void GetWord_ONE_HUNDRED_Success()
+        //{
+
+        //    TranslaterManager ts = new TranslaterManager(20);
+
+        //    string expect = "Twenty";
+
+        //    string actual = ts.GetWords();
+
+        //    Assert.AreEqual(expect, actual);
+        //}
+
     }
 }
