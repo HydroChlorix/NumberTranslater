@@ -12,9 +12,19 @@ namespace ConsoleApplication
         {
         }
 
-        public string Translate()
+        public string ConvertFirstGroupToString()
         {
             throw new NotImplementedException();
+        }
+
+        public string ConvertSecondGroupToString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Translate()
+        {
+            return string.Format("{0} {1}", this.ConvertFirstGroupToString(), this.ConvertSecondGroupToString().ToLower());
         }
     }
 }

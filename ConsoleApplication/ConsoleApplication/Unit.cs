@@ -12,6 +12,16 @@ namespace ConsoleApplication
         {
         }
 
+        public string ConvertFirstGroupToString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ConvertSecondGroupToString()
+        {
+            throw new NotImplementedException();
+        }
+
         public string Translate()
         {
             return numberList[_number];

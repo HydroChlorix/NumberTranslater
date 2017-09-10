@@ -17,11 +17,11 @@ namespace ConsoleApplication
             return string.Format("{0} {1}", this.ConvertFirstGroupToString(), this.ConvertSecondGroupToString().ToLower());
         }
 
-        private string ConvertFirstGroupToString()
+        public string ConvertFirstGroupToString()
         {
             return string.Format("{0} {1}", base.numberList[this.FirstNumber], base.numberList[this._divider].ToLower());
         }
-        private string ConvertSecondGroupToString()
+        public string ConvertSecondGroupToString()
         {
             string result = string.Empty;
             if (this.LastNumber != 0)
@@ -29,7 +29,6 @@ namespace ConsoleApplication
                 string value = numberList.TryGetValue(this.LastNumber, out value) ? value : TranslateFactory.Create(this.LastNumber).Translate();
 
                 result = string.Format("and {0}", value);
-
 
             }
             return result;

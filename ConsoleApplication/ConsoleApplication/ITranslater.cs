@@ -9,5 +9,8 @@ namespace ConsoleApplication
     public interface ITranslater
     {
         string Translate();
+        string ConvertFirstGroupToString();
+
+        string ConvertSecondGroupToString();
     }
 }

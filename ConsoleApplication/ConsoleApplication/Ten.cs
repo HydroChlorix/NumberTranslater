@@ -18,7 +18,7 @@ namespace ConsoleApplication
             //return string.Format("{0} {1}", this._firstGroup, this._secondGroup);
         }
 
-        private string ConvertFirstGroupToString()
+        public string ConvertFirstGroupToString()
         {
             string result = string.Empty;
 
@@ -33,7 +33,7 @@ namespace ConsoleApplication
 
             return result;
         }
-        private string ConvertSecondGroupToString()
+        public string ConvertSecondGroupToString()
         {
             string result = string.Empty;
             if (this.FirstNumber > 1 && this.LastNumber != 0)
