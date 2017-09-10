@@ -43,6 +43,7 @@ namespace ConsoleApplication
             {1000000,"Million" },
             {1000000000,"Billion" },	
             //{1000000000000,"Trillion" },	
+             //{1000000000000000,"Trillion" },	
         };
         #endregion
         protected int _number;

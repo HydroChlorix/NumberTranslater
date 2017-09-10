@@ -14,12 +14,20 @@ namespace ConsoleApplication
 
         public string ConvertFirstGroupToString()
         {
-            throw new NotImplementedException();
+            return string.Format("{0} {1}", base.numberList[this.FirstNumber], base.numberList[this._divider].ToLower());
         }
 
         public string ConvertSecondGroupToString()
         {
-            throw new NotImplementedException();
+            string result = string.Empty;
+            if (this.LastNumber != 0)
+            {
+                string value = numberList.TryGetValue(this.LastNumber, out value) ? value : TranslateFactory.Create(this.LastNumber).Translate();
+
+                result = string.Format("and {0}", value);
+
+            }
+            return result;
         }
 
         public string Translate()

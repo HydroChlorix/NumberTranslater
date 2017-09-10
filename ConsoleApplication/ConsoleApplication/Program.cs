@@ -16,7 +16,7 @@ namespace ConsoleApplication
             //Run(Enumerable.Range(0, 10));
             //Run(Enumerable.Range(10, 10));
             //Run(Enumerable.Range(20, 80));
-            Run(Enumerable.Range(1000, 10));
+            Run(Enumerable.Range(9999, 5));
 
             //Run(Enumerable.Range(200, 3));
 
