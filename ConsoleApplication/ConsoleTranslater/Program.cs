@@ -24,7 +24,7 @@ namespace ConsoleTranslater
                 {
                     if (decimal.TryParse(input, out number))
                     {
-                        Translater ts = new Translater(decimal.MaxValue);
+                        Translater ts = new Translater(number);
                         Console.WriteLine(ts.Translate());
                     }
                     else
