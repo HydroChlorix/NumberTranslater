@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\V3\ConsoleTranslater.csproj">
+    <ProjectReference Include="..\ConsoleTranslater\ConsoleTranslater.csproj">
       <Project>{7f77e4ec-f3bd-4893-a29b-882949c89b53}</Project>
       <Name>ConsoleTranslater</Name>
     </ProjectReference>

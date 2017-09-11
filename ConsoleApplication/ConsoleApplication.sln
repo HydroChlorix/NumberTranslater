@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{8C1BC636-95A3-468C-9828-35FBB9D4E907}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater", "ConsoleTranslater\ConsoleTranslater.csproj", "{7F77E4EC-F3BD-4893-A29B-882949C89B53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleV2", "ConsoleV2\ConsoleV2.csproj", "{826251E5-6AF9-4CCB-8599-22B87B6A56D8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleV2.Test", "ConsoleV2.Test\ConsoleV2.Test.csproj", "{7C286620-4C53-4BA5-959C-83A253CA8AC4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater", "V3\ConsoleTranslater.csproj", "{7F77E4EC-F3BD-4893-A29B-882949C89B53}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater.Test", "V3.Test\ConsoleTranslater.Test.csproj", "{0B3DF36B-5420-4AA6-A883-063C2C773F71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater.Test", "ConsoleTranslater.Test\ConsoleTranslater.Test.csproj", "{0B3DF36B-5420-4AA6-A883-063C2C773F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C1BC636-95A3-468C-9828-35FBB9D4E907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C1BC636-95A3-468C-9828-35FBB9D4E907}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C1BC636-95A3-468C-9828-35FBB9D4E907}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C1BC636-95A3-468C-9828-35FBB9D4E907}.Release|Any CPU.Build.0 = Release|Any CPU
-		{826251E5-6AF9-4CCB-8599-22B87B6A56D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{826251E5-6AF9-4CCB-8599-22B87B6A56D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{826251E5-6AF9-4CCB-8599-22B87B6A56D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{826251E5-6AF9-4CCB-8599-22B87B6A56D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C286620-4C53-4BA5-959C-83A253CA8AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C286620-4C53-4BA5-959C-83A253CA8AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C286620-4C53-4BA5-959C-83A253CA8AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C286620-4C53-4BA5-959C-83A253CA8AC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F77E4EC-F3BD-4893-A29B-882949C89B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F77E4EC-F3BD-4893-A29B-882949C89B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F77E4EC-F3BD-4893-A29B-882949C89B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
