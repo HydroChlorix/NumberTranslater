@@ -16,6 +16,8 @@ namespace V3
 
             Console.WriteLine(actual);
             //Run(Enumerable.Range(100, 201));
+
+            var x = decimal.MaxValue;
             Console.ReadLine();
         }
 

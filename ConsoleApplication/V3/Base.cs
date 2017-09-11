@@ -8,15 +8,15 @@ namespace V3
 {
     public class Base
     {
-        public static long TEN { get { return (long)10; } }
-        public static long ONE_HUNDRED { get { return (long)Math.Pow(10, 2); } }
-        public static long ONE_THOUSAND { get { return (long)Math.Pow(10, 3); } }
-        public static long ONE_MILLION { get { return (long)Math.Pow(10, 6); } }
-        public static long ONE_BILLION { get { return (long)Math.Pow(10, 9); } }
-        public static long ONE_TRILLION { get { return (long)Math.Pow(10, 12); } }
-        public static long ONE_QUADRILLION { get { return (long)Math.Pow(10, 15); } }
+        public static decimal TEN { get { return (decimal)10; } }
+        public static decimal ONE_HUNDRED { get { return (decimal)Math.Pow(10, 2); } }
+        public static decimal ONE_THOUSAND { get { return (decimal)Math.Pow(10, 3); } }
+        public static decimal ONE_MILLION { get { return (decimal)Math.Pow(10, 6); } }
+        public static decimal ONE_BILLION { get { return (decimal)Math.Pow(10, 9); } }
+        public static decimal ONE_TRILLION { get { return (decimal)Math.Pow(10, 12); } }
+        public static decimal ONE_QUADRILLION { get { return (decimal)Math.Pow(10, 15); } }
 
-        public static Dictionary<long, string> numberList = new Dictionary<long, string>() {
+        public static Dictionary<decimal, string> numberList = new Dictionary<decimal, string>() {
             {0 ,"zero" },
             {1 ,"one" },
             {2 ,"two" },
