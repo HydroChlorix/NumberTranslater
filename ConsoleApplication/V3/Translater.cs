@@ -79,9 +79,16 @@ namespace V3
 
                 var numberRatio = _number / ONE_THOUSAND;
 
-                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
+                if (nextNumber == 0)
                 {
-                    word = numberList[numberRatio];
+                    if (numberRatio < ONE_HUNDRED)
+                    {
+                        word = numberList[numberRatio];
+                    }
+                    else
+                    {
+                        word = GetWord(Math.Floor(numberRatio));
+                    }
                 }
                 else
                 {
@@ -95,9 +102,16 @@ namespace V3
 
                 var numberRatio = _number / ONE_MILLION;
 
-                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
+                if (nextNumber == 0)
                 {
-                    word = numberList[numberRatio];
+                    if (numberRatio < ONE_HUNDRED)
+                    {
+                        word = numberList[numberRatio];
+                    }
+                    else
+                    {
+                        word = GetWord(Math.Floor(numberRatio));
+                    }
                 }
                 else
                 {
@@ -111,9 +125,16 @@ namespace V3
 
                 var numberRatio = _number / ONE_BILLION;
 
-                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
+                if (nextNumber == 0)
                 {
-                    word = numberList[numberRatio];
+                    if (numberRatio < ONE_HUNDRED)
+                    {
+                        word = numberList[numberRatio];
+                    }
+                    else
+                    {
+                        word = GetWord(Math.Floor(numberRatio));
+                    }
                 }
                 else
                 {
@@ -127,9 +148,16 @@ namespace V3
 
                 var numberRatio = _number / ONE_TRILLION;
 
-                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
+                if (nextNumber == 0)
                 {
-                    word = numberList[numberRatio];
+                    if (numberRatio < ONE_HUNDRED)
+                    {
+                        word = numberList[numberRatio];
+                    }
+                    else
+                    {
+                        word = GetWord(Math.Floor(numberRatio));
+                    }
                 }
                 else
                 {
@@ -138,7 +166,7 @@ namespace V3
 
                 word += " trillion";
             }
-            else if (_number < decimal.MaxValue)
+            else if (_number <= decimal.MaxValue)
             {
                 nextNumber = _number % ONE_QUADRILLION;
 
