@@ -19,24 +19,31 @@ namespace V3
         public string Translate()
         {
             List<string> words = new List<string>();
-            return GetWord(_number, ref words);
+
+
+            return GetWord(_number);
         }
 
-        private string GetWord(long _number, ref List<string> collections)
+        private string GetWord(long _number, List<string> collections = null)
         {
             string word = string.Empty;
             long nextNumber = 0;
 
             if (_number == 0)
             {
-                return collections.Any() ? string.Join(" ", collections) : numberList[0];
+                return collections != null && collections.Any() ? string.Join(" ", collections) : numberList[0];
+            }
+
+            if (collections == null)
+            {
+                collections = new List<string>();
             }
 
             if (_number < 21)
             {
                 nextNumber = 0;
-                //word = numberList[_number];
-                return numberList[_number];
+                word = numberList[_number];
+                //return numberList[_number];
             }
             else if (_number < ONE_HUNDRED)
             {
@@ -59,7 +66,7 @@ namespace V3
                 }
                 else
                 {
-                    word = GetWord((long)Math.Floor((double)(_number / ONE_HUNDRED)), ref collections);
+                    word = GetWord((long)Math.Floor((double)(_number / ONE_HUNDRED)));
                 }
                 word += " hundred";
             }
@@ -72,34 +79,71 @@ namespace V3
                 }
                 else
                 {
-                    word = GetWord((long)Math.Floor((double)(_number / ONE_THOUSAND)), ref collections);
+                    word = GetWord((long)Math.Floor((double)(_number / ONE_THOUSAND)));
                 }
                 word += " thousand";
             }
             else if (_number < ONE_BILLION)
             {
                 nextNumber = _number % ONE_MILLION;
-                word = GetWord((long)Math.Floor((double)(_number / ONE_MILLION)), ref collections) + " million";
+                if (nextNumber == 0)
+                {
+                    word = numberList[_number / ONE_MILLION];
+                }
+                else
+                {
+                    word = GetWord((long)Math.Floor((double)(_number / ONE_MILLION)));
+                }
+                word += " million";
             }
             else if (_number < ONE_TRILLION)
             {
                 nextNumber = _number % ONE_BILLION;
-                word = GetWord((long)Math.Floor((double)(_number / ONE_BILLION)), ref collections) + " billion";
+                if (nextNumber == 0)
+                {
+                    word = numberList[_number / ONE_BILLION];
+                }
+                else
+                {
+                    word = GetWord((long)Math.Floor((double)(_number / ONE_BILLION)));
+                }
+                word += " billion";
             }
             else if (_number < ONE_QUADRILLION)
             {
                 nextNumber = _number % ONE_TRILLION;
-                word = GetWord((long)Math.Floor((double)(_number / ONE_TRILLION)), ref collections) + " trillion";
+                if (nextNumber == 0)
+                {
+                    word = numberList[_number / ONE_TRILLION];
+                }
+                else
+                {
+                    word = GetWord((long)Math.Floor((double)(_number / ONE_TRILLION)));
+                }
+
+                word += " trillion";
             }
             else if (_number < long.MaxValue)
             {
                 nextNumber = _number % ONE_QUADRILLION;
-                word = GetWord((long)Math.Floor((double)(_number / ONE_QUADRILLION)), ref collections) + " quadrillion";
+
+                var numberRatio = _number / ONE_QUADRILLION;
+
+                if (nextNumber == 0)
+                {
+                    //word = numberList[numberRatio];
+                    word = GetWord((long)Math.Floor((double)(numberRatio)));
+                }
+                else
+                {
+                    word = GetWord((long)Math.Floor((double)(numberRatio)));
+                }
+                word += " quadrillion";
             }
 
             collections.Add(word);
 
-            return GetWord(nextNumber, ref collections);
+            return GetWord(nextNumber, collections);
         }
     }
 }

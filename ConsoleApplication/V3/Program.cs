@@ -11,11 +11,11 @@ namespace V3
 
         static void Main(string[] args)
         {
-            //Translater ts = new Translater(100);
-            //var actual = ts.Translate();
+            Translater ts = new Translater(2000000000000000000);
+            var actual = ts.Translate();
 
-            //Console.WriteLine(actual);
-            Run(Enumerable.Range(20, 10));
+            Console.WriteLine(actual);
+            //Run(Enumerable.Range(100, 201));
             Console.ReadLine();
         }
 
