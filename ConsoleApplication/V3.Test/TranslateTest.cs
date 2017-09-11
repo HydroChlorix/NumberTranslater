@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace V3.Test
+namespace ConsoleTranslater.Test
 {
     [TestClass]
     public class TranslateTest
