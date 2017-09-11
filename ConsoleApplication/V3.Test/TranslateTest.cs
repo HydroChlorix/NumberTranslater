@@ -8,165 +8,12 @@ namespace V3.Test
     public class TranslateTest
     {
 
-        public TranslateTest()
-        {
-
-        }
-        [TestMethod]
-        public void Translate_Zero_Success()
-        {
-            Translater ts = new Translater(0);
-            var actual = ts.Translate();
-            var expect = "zero";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_Ten_Success()
-        {
-            Translater ts = new Translater(10);
-            var actual = ts.Translate();
-            var expect = "ten";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_Hundred_Success()
-        {
-            Translater ts = new Translater(100);
-            var actual = ts.Translate();
-            var expect = "one hundred";
-
-            Assert.AreEqual(expect, actual);
-        }
-        [TestMethod]
-        public void Translate_Thousand_Success()
-        {
-            Translater ts = new Translater(1000);
-            var actual = ts.Translate();
-            var expect = "one thousand";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_TenThousand_Success()
-        {
-            Translater ts = new Translater(10 * 1000);
-            var actual = ts.Translate();
-            var expect = "ten thousand";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_OneMillion_Success()
-        {
-            Translater ts = new Translater(1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "one million";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_TenMillion_Success()
-        {
-            Translater ts = new Translater(10 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "ten million";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_OneBillion_Success()
-        {
-            Translater ts = new Translater(1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "one billion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-
-        [TestMethod]
-        public void Translate_TenBillion_Success()
-        {
-            Translater ts = new Translater((decimal)10 * 1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "ten billion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_OneTrillion_Success()
-        {
-            Translater ts = new Translater((decimal)1000 * 1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "one trillion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_TenTrillion_Success()
-        {
-            Translater ts = new Translater((decimal)10 * 1000 * 1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "ten trillion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_OneQuadrillion_Success()
-        {
-            Translater ts = new Translater((decimal)1000 * 1000 * 1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "one quadrillion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_TenQuadrillion_Success()
-        {
-            Translater ts = new Translater((decimal)10 * 1000 * 1000 * 1000 * 1000 * 1000);
-            var actual = ts.Translate();
-            var expect = "ten quadrillion";
-
-            Assert.AreEqual(expect, actual);
-        }
-
-        [TestMethod]
-        public void Translate_TWO_THOUSAND_QUADRILLION_Success()
-        {
-            foreach (var item in spec)
-            {
-                Translater ts = new Translater(2 * (decimal)Math.Pow(10, 18));
-                var actual = ts.Translate();
-                var expect = "two thousand quadrillion";
-                Assert.AreEqual(expect, actual);
-            }
-        }
-
-        [TestMethod]
-        public void Translate_400_Thousand_Quadrillion_Success()
-        {
-            foreach (var item in spec)
-            {
-                Translater ts = new Translater(400 * (decimal)Math.Pow(10, 18));
-                var actual = ts.Translate();
-                var expect = "four hundred thousand quadrillion";
-                Assert.AreEqual(expect, actual);
-            }
-        }
-
-        private Dictionary<decimal, string> spec = new Dictionary<decimal, string>() {
+        private Dictionary<decimal, string> specs = new Dictionary<decimal, string>() {
+            { -1                              , "minus one"},
+            { -500                            , "minus five hundred"},
+            { 0                               , "zero"},
+            { 10                              , "ten"},
+            { 100                             , "one hundred"},
             { 21                              , "twenty one" },
             { 101                             , "one hundred one"},
             { 121                             , "one hundred twenty one"},
@@ -178,7 +25,7 @@ namespace V3.Test
             { 3333333                         , "three million three hundred thirty three thousand three hundred thirty three" },
             { 44444444                        , "fourty four million four hundred fourty four thousand four hundred fourty four" },
             { 555555555                       , "five hundred fifty five million five hundred fifty five thousand five hundred fifty five" },
-            { 5 *   (decimal)Math.Pow(10, 9)  ,"five billion" },
+            { 5 *   (decimal)Math.Pow(10, 9)  , "five billion" },
             { 6666666666                      , "six billion six hundred sixty six million six hundred sixty six thousand six hundred sixty six" },
             { 77777777777                     , "seventy seven billion seven hundred seventy seven million seven hundred seventy seven thousand seven hundred seventy seven" },
             { 17117117117                     , "seventeen billion one hundred seventeen million one hundred seventeen thousand one hundred seventeen"},
@@ -204,16 +51,22 @@ namespace V3.Test
             { 100 * (decimal)Math.Pow(10, 24) , "one hundred billion quadrillion" },
             { 2 *   (decimal)Math.Pow(10, 27) , "two trillion quadrillion" },
             { 30 *  (decimal)Math.Pow(10, 27) , "thirty trillion quadrillion" },
-            { decimal.MaxValue , "seventy nine trillion two hundred twenty eight billion one hundred sixty two million five hundred fourteen thousand two hundred sixty four quadrillion three hundred thirty seven trillion five hundred ninety three billion five hundred fourty three million nine hundred fifty thousand three hundred thirty five" }// Max
+            { decimal.MaxValue                , "seventy nine trillion two hundred twenty eight billion one hundred sixty two million five hundred fourteen thousand two hundred sixty four quadrillion three hundred thirty seven trillion five hundred ninety three billion five hundred fourty three million nine hundred fifty thousand three hundred thirty five" }// Max
         };
+
         [TestMethod]
         public void Translate_Collection_Success()
         {
-            foreach (var item in spec)
+            foreach (var item in specs)
             {
-                Translater ts = new Translater(item.Key);
-                var actual = ts.Translate();
+                //arange
                 var expect = item.Value;
+                Translater ts = new Translater(item.Key);
+
+                //act
+                var actual = ts.Translate();
+
+                //assert
                 Assert.AreEqual(expect, actual);
             }
         }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace V3
 {
-    public class Translater : Base
+    public class Translater : BaseTranslater
     {
-
         private decimal _number;
 
         public Translater(decimal number)
@@ -18,18 +17,15 @@ namespace V3
 
         public string Translate()
         {
-            List<string> words = new List<string>();
-
-
             return GetWord(_number);
         }
 
-        private string GetWord(decimal _number, List<string> collections = null)
+        private string GetWord(decimal number, List<string> collections = null)
         {
             string word = string.Empty;
             decimal nextNumber = 0;
 
-            if (_number == 0)
+            if (number == 0)
             {
                 return collections != null && collections.Any() ? string.Join(" ", collections) : numberList[0];
             }
@@ -39,17 +35,22 @@ namespace V3
                 collections = new List<string>();
             }
 
-            if (_number < 21)
+            if (number < 0)
+            {
+                collections.Add("minus");
+                number = Math.Abs(number);
+            }
+
+            if (number < 21)
             {
                 nextNumber = 0;
-                word = numberList[_number];
-                //return numberList[_number];
+                word = numberList[number];
             }
-            else if (_number < ONE_HUNDRED)
+            else if (number < ONE_HUNDRED)
             {
-                nextNumber = _number % TEN;
+                nextNumber = number % TEN;
 
-                word = numberList[Math.Floor(_number / TEN) * TEN];
+                word = numberList[Math.Floor(number / TEN) * TEN];
 
                 if (nextNumber != 0)
                 {
@@ -57,38 +58,29 @@ namespace V3
                     nextNumber = 0;
                 }
             }
-            else if (_number < ONE_THOUSAND)
+            else if (number < ONE_THOUSAND)
             {
-                nextNumber = _number % ONE_HUNDRED;
-
-                //var numberRatio = _number / ONE_QUADRILLION;
+                nextNumber = number % ONE_HUNDRED;
 
                 if (nextNumber == 0)
                 {
-                    word = numberList[_number / ONE_HUNDRED];
+                    word = numberList[number / ONE_HUNDRED];
                 }
                 else
                 {
-                    word = GetWord(Math.Floor(_number / ONE_HUNDRED));
+                    word = GetWord(Math.Floor(number / ONE_HUNDRED));
                 }
                 word += " hundred";
             }
-            else if (_number < ONE_MILLION)
+            else if (number < ONE_MILLION)
             {
-                nextNumber = _number % ONE_THOUSAND;
+                nextNumber = number % ONE_THOUSAND;
 
-                var numberRatio = _number / ONE_THOUSAND;
+                var numberRatio = number / ONE_THOUSAND;
 
-                if (nextNumber == 0)
+                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
                 {
-                    if (numberRatio < ONE_HUNDRED)
-                    {
-                        word = numberList[numberRatio];
-                    }
-                    else
-                    {
-                        word = GetWord(Math.Floor(numberRatio));
-                    }
+                    word = numberList[numberRatio];
                 }
                 else
                 {
@@ -96,22 +88,15 @@ namespace V3
                 }
                 word += " thousand";
             }
-            else if (_number < ONE_BILLION)
+            else if (number < ONE_BILLION)
             {
-                nextNumber = _number % ONE_MILLION;
+                nextNumber = number % ONE_MILLION;
 
-                var numberRatio = _number / ONE_MILLION;
+                var numberRatio = number / ONE_MILLION;
 
-                if (nextNumber == 0)
+                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
                 {
-                    if (numberRatio < ONE_HUNDRED)
-                    {
-                        word = numberList[numberRatio];
-                    }
-                    else
-                    {
-                        word = GetWord(Math.Floor(numberRatio));
-                    }
+                    word = numberList[numberRatio];
                 }
                 else
                 {
@@ -119,22 +104,15 @@ namespace V3
                 }
                 word += " million";
             }
-            else if (_number < ONE_TRILLION)
+            else if (number < ONE_TRILLION)
             {
-                nextNumber = _number % ONE_BILLION;
+                nextNumber = number % ONE_BILLION;
 
-                var numberRatio = _number / ONE_BILLION;
+                var numberRatio = number / ONE_BILLION;
 
-                if (nextNumber == 0)
+                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
                 {
-                    if (numberRatio < ONE_HUNDRED)
-                    {
-                        word = numberList[numberRatio];
-                    }
-                    else
-                    {
-                        word = GetWord(Math.Floor(numberRatio));
-                    }
+                    word = numberList[numberRatio];
                 }
                 else
                 {
@@ -142,22 +120,15 @@ namespace V3
                 }
                 word += " billion";
             }
-            else if (_number < ONE_QUADRILLION)
+            else if (number < ONE_QUADRILLION)
             {
-                nextNumber = _number % ONE_TRILLION;
+                nextNumber = number % ONE_TRILLION;
 
-                var numberRatio = _number / ONE_TRILLION;
+                var numberRatio = number / ONE_TRILLION;
 
-                if (nextNumber == 0)
+                if (nextNumber == 0 && numberRatio < ONE_HUNDRED)
                 {
-                    if (numberRatio < ONE_HUNDRED)
-                    {
-                        word = numberList[numberRatio];
-                    }
-                    else
-                    {
-                        word = GetWord(Math.Floor(numberRatio));
-                    }
+                    word = numberList[numberRatio];
                 }
                 else
                 {
@@ -166,15 +137,11 @@ namespace V3
 
                 word += " trillion";
             }
-            else if (_number <= decimal.MaxValue)
+            else if (number <= decimal.MaxValue)
             {
-                nextNumber = _number % ONE_QUADRILLION;
+                nextNumber = number % ONE_QUADRILLION;
 
-                var numberRatio = _number / ONE_QUADRILLION;
-
-                word = GetWord(Math.Floor((numberRatio)));
-
-                word += " quadrillion";
+                word = GetWord(Math.Floor(number / ONE_QUADRILLION)) + " quadrillion";
             }
 
             collections.Add(word);

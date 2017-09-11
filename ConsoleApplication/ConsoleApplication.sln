@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleV2", "ConsoleV2\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleV2.Test", "ConsoleV2.Test\ConsoleV2.Test.csproj", "{7C286620-4C53-4BA5-959C-83A253CA8AC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "V3", "V3\V3.csproj", "{7F77E4EC-F3BD-4893-A29B-882949C89B53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater", "V3\ConsoleTranslater.csproj", "{7F77E4EC-F3BD-4893-A29B-882949C89B53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "V3.Test", "V3.Test\V3.Test.csproj", "{0B3DF36B-5420-4AA6-A883-063C2C773F71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTranslater.Test", "V3.Test\ConsoleTranslater.Test.csproj", "{0B3DF36B-5420-4AA6-A883-063C2C773F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

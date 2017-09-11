@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace V3
 {
-    public class Base
+    public class BaseTranslater
     {
-        public static decimal TEN { get { return (decimal)10; } }
+        public static decimal TEN { get { return 10; } }
         public static decimal ONE_HUNDRED { get { return (decimal)Math.Pow(10, 2); } }
         public static decimal ONE_THOUSAND { get { return (decimal)Math.Pow(10, 3); } }
         public static decimal ONE_MILLION { get { return (decimal)Math.Pow(10, 6); } }
@@ -45,12 +45,6 @@ namespace V3
             {70,"seventy" },
             {80,"eighty" },
             {90,"ninety" },
-            {100,"hundred" },
-            {1000,"thousand" },
-            {1000000,"million" },
-            {1000000000,"billion" },
-            {1000000000000,"trillion" },
-            {1000000000000000,"quadrillion" }
         };
 
     }

@@ -8,25 +8,30 @@ namespace V3
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            Translater ts = new Translater(2000000000000000000);
-            var actual = ts.Translate();
-
-            Console.WriteLine(actual);
-            //Run(Enumerable.Range(100, 201));
-
-            var x = decimal.MaxValue;
-            Console.ReadLine();
-        }
-
-        private static void Run(IEnumerable<int> enumerable)
-        {
-            foreach (var number in enumerable)
+            while (true)
             {
-                Translater ts = new Translater(number);
-                Console.WriteLine(ts.Translate());
+                Console.Write("Input number : ");
+                var input = Console.ReadLine();
+                decimal number = 0;
+
+                if (input == "q" || input == "Q")
+                {
+                    break;
+                }
+                else
+                {
+                    if (decimal.TryParse(input, out number))
+                    {
+                        Translater ts = new Translater(decimal.MaxValue);
+                        Console.WriteLine(ts.Translate());
+                    }
+                    else
+                    {
+                        Console.WriteLine("incorrect number input. pleas try again. (Press q to exit.)");
+                    }
+                }
             }
         }
     }
